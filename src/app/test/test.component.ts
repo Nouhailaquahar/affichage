@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-button',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.css']
 })
-export class AppComponent {
+export class ButtonComponent {
   constructor(private http: HttpClient) {}
 
-  triggerJenkinsPipeline() {
-    this.http.get('/api/trigger-pipeline').subscribe(() => {
-      alert('Pipeline Jenkins déclenchée avec succès !');
+  callBackend() {
+    this.http.get('http://localhost:8080/api/groovy').subscribe((response: any) => {
+      alert(response.message);
     });
   }
 }
