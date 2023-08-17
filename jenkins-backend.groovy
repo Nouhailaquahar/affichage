@@ -1,2 +1,2 @@
-def response = 'Bonjour depuis le backend Groovy !'
-println response
+def message = 'Bonjour depuis le backend Groovy !'
+println message
